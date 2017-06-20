@@ -1,0 +1,6 @@
+django == 1.10.2
+git+https://github.com/MongoEngine/django-mongoengine@207df40 # Not sure which version you wanted me to use
+pytest
+enum
+simplejson
+pytz

@@ -276,6 +276,8 @@ class ModelView(ApiView):
         return {'object': serialized}
 
     def get_by_ids(self, request, ids):
+        if not isinstance(ids, list):
+            ids = ids.split(',')
         query = {'_id': {'$in': ids}}
         self._filter(request, query, {})
         params = FindParams(request=None if request.user.is_superuser else request)
